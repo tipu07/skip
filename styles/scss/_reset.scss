@@ -1,0 +1,566 @@
+$colors: (
+	"prime_color": #ff7e15,
+	"black": #091e42,
+	"light_black": #474747,
+	"dark": #0d0c10,
+	"light": #fff,
+	"light_white": #f8f7f4,
+	"gray": #dcdcdc,
+	"dark_gray": #a2b1b3,
+	"light_gray": #f8f7f4,
+	"green": #12b07e,
+	"yellow": #ffcb00,
+	"red": #e71939,
+	"blue": #4378ff,
+	"theme": #ff7e15,
+);
+
+:root {
+	@each $color, $value in $colors {
+		--#{$color}: #{$value};
+		--#{$color}_rgb: #{red($value)}, #{green($value)}, #{blue($value)};
+	}
+	// "green": #19cba6,
+	--button_input_height: 5rem;
+	--font-segoe-ui: "Museo Sans", sans-serif;
+	--transition: all ease 0.3s;
+}
+
+/*
+|----------------------------------------------------------------------
+|		Body
+|----------------------------------------------------------------------
+*/
+
+html {
+	min-height: 100%;
+	// font-size: 10 + $pix;
+	font-size: 8.88889 + $pix;
+	overflow: hidden;
+	overflow-y: initial;
+	@include laptop_sm {
+		font-size: 8.88889 + $pix !important;
+	}
+	@include ipad_sm {
+		font-size: 10 + $pix !important;
+	}
+	&.flow {
+		overflow: hidden !important;
+		body {
+			overflow: hidden !important;
+		}
+	}
+	@at-root {
+		#__next {
+			@include flex($flow: column);
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			width: 100%;
+			section {
+				width: 100%;
+			}
+		}
+		section {
+			overflow: hidden;
+		}
+		button {
+			background: transparent;
+			padding: 0;
+			border: 0;
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+		}
+	}
+}
+
+body {
+	position: relative;
+	@include flex($flow: column);
+	min-height: 100vh;
+	background-color: var(--light);
+	color: var(--black);
+	font-size: 1.6rem;
+	font-family: var(--font-segoe-ui);
+	font-weight: 400;
+	margin: 0;
+	padding: 8rem 0 0;
+	line-height: 1.6;
+	word-break: break-word;
+	-webkit-transition: var(--transition);
+	transition: var(--transition);
+	@include mobile {
+		line-height: 1.4;
+	}
+	@at-root {
+		section {
+			position: relative;
+			// padding: 6rem 0;
+		}
+		a {
+			color: var(--black);
+			word-break: break-word;
+			text-decoration: none;
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+			&:hover {
+				color: var(--prime_color);
+			}
+			&:focus,
+			&:hover {
+				outline: none !important;
+				// text-decoration: none !important;
+				text-decoration: none;
+			}
+		}
+		button {
+			-webkit-transition: var(--transition);
+			transition: var(--transition);
+		}
+	}
+}
+
+::-moz-selection {
+	background: var(--prime_color);
+	color: var(--light);
+}
+
+::selection {
+	background: var(--prime_color);
+	color: var(--light);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-weight: 600;
+	line-height: 1.1;
+	margin: 0 0 1rem;
+	/* &.subheading {
+		margin-bottom: 2rem;
+	} */
+	&.require {
+		&::after {
+			content: "*";
+			color: var(--red);
+		}
+	}
+	> a {
+		color: inherit;
+	}
+	> strong {
+		color: var(--prime_color);
+		font-weight: inherit;
+	}
+}
+
+h1,
+.h1 {
+	font-size: 4.8rem;
+	@include ipad {
+		font-size: 4rem;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 3.6rem;
+	@include ipad {
+		font-size: 3rem;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 2.8rem;
+	@include ipad {
+		font-size: 2.2rem;
+	}
+}
+
+h4,
+.h4 {
+	font-size: 2.2rem;
+	@include ipad {
+		font-size: 1.8rem;
+	}
+}
+
+h5,
+.h5 {
+	font-size: 1.8rem;
+	@include ipad {
+		font-size: 1.6rem;
+	}
+}
+
+h6,
+.h6 {
+	font-size: 1.4rem;
+	@include ipad {
+		font-size: 1.4rem;
+	}
+}
+
+.fw {
+	&_100 {
+		font-weight: 100 $i;
+	}
+	&_200 {
+		font-weight: 200 $i;
+	}
+	&_300 {
+		font-weight: 300 $i;
+	}
+	&_400 {
+		font-weight: 400 $i;
+	}
+	&_500 {
+		font-weight: 500 $i;
+	}
+	&_600 {
+		font-weight: 600 $i;
+	}
+	&_700 {
+		font-weight: 700 $i;
+	}
+	&_800 {
+		font-weight: 800 $i;
+	}
+}
+
+p {
+	margin: 0 0 1rem;
+	> a {
+		display: inline;
+		color: var(--prime_color);
+		&:hover {
+			color: #2115dc;
+		}
+	}
+	&:nth-last-child(1) {
+		margin: 0;
+	}
+}
+
+*[disabled] {
+	cursor: not-allowed !important;
+}
+
+/*
+|----------------------------------------------------------------------
+|		Body Inner Css
+|----------------------------------------------------------------------
+*/
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+input,
+button,
+select,
+textarea {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.row {
+	@include row;
+	&.flex_row {
+		> div {
+			@include flex;
+			> * {
+				width: 100%;
+			}
+		}
+	}
+	&.form_row {
+		@include row(1rem, 1rem);
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|		Form
+|----------------------------------------------------------------------
+*/
+
+label {
+	display: block;
+	font-weight: inherit;
+	cursor: pointer;
+	&.require {
+		&::after {
+			content: "*";
+			color: var(--red);
+			font-weight: 700;
+			margin-left: 0.4rem;
+		}
+	}
+	> a {
+		color: #3c9cdb;
+		&:hover {
+			color: var(--prime_color);
+		}
+	}
+}
+
+input {
+	&[type="radio"],
+	&[type="checkbox"] {
+		position: relative;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 2rem;
+		min-width: 2rem;
+		height: 2rem;
+		background: var(--light);
+		color: var(--light);
+		margin-top: 0;
+		border: 0.1rem solid var(--gray);
+		cursor: pointer;
+	}
+	&[type="radio"] {
+		padding: 0.3rem;
+		border-radius: 75%;
+		&:checked {
+			background: var(--prime_color);
+			background-clip: content-box;
+			border-color: var(--prime_color);
+		}
+	}
+	&[type="radio"],
+	&[type="checkbox"] {
+		border-radius: 0.4rem;
+		&::before {
+			content: "";
+			@include pos($z: 1);
+			@include tick;
+			width: 0.8rem;
+			height: 0.8rem;
+			margin: auto;
+		}
+		&:checked {
+			background: var(--prime_color);
+			border-color: var(--prime_color);
+			& + .checkbox {
+				background: var(--prime_color);
+				border-color: var(--prime_color);
+			}
+		}
+	}
+	&[type="file"].uploadFile {
+		display: none;
+	}
+	&::-ms-reveal,
+	&::-ms-clear {
+		display: none;
+	}
+	@at-root {
+		.checkbox {
+			@extend input, [type="checkbox"];
+			-webkit-transition: all ease 0.2s;
+			transition: all ease 0.2s;
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|		Slick-Carousel
+|----------------------------------------------------------------------
+*/
+
+.slick-carousel {
+	/* &:not(:hover) {
+		.slick-arrow {
+			&.slick-prev {
+				left: -5rem;
+			}
+			&.slick-next {
+				right: -5rem;
+			}
+		}
+	} */
+	.slick-slide {
+		outline: none !important;
+	}
+	.slick-arrow {
+		width: 4rem;
+		height: 4rem;
+		background: var(--light);
+		color: var(--prime_color);
+		padding: 1.2rem;
+		-webkit-box-shadow: 0 0.2rem 0.2rem rgba(29, 29, 27, 0.25);
+		box-shadow: 0 0.2rem 0.2rem rgba(29, 29, 27, 0.25);
+		@include trans;
+		&.slick-prev {
+			left: -4rem;
+			&:after {
+				@include arrow_left;
+			}
+		}
+		&.slick-next {
+			right: -4rem;
+			&:after {
+				@include arrow_right;
+			}
+		}
+		&.slick-prev,
+		&.slick-next {
+			&:before {
+				display: none;
+			}
+			&:after {
+				content: "";
+				display: block;
+				width: 100% !important;
+				height: 100% !important;
+				-webkit-transition: none;
+				transition: none;
+			}
+		}
+		&.slick-disabled {
+			opacity: 0;
+			visibility: hidden;
+		}
+		&:hover {
+			background: var(--light);
+			color: var(--black);
+		}
+	}
+	.slick-dots {
+		li {
+			button {
+				height: 0.5rem;
+				background: var(--dark_gray);
+				border-radius: 50rem;
+			}
+			&.slick-active {
+				button {
+					background: var(--prime_color);
+				}
+			}
+		}
+	}
+	&.slick-reviews {
+		.slick-arrow {
+			top: unset;
+			bottom: 0;
+			background: var(--light);
+			-webkit-transform: none;
+			-ms-transform: none;
+			transform: none;
+			&.slick-prev {
+				left: 0;
+				margin-left: 5.2rem;
+			}
+			&.slick-next {
+				left: 0;
+				right: initial;
+				margin-left: 10.2rem;
+			}
+		}
+		.slick-dots {
+			position: absolute;
+			left: initial;
+			bottom: 2.5rem;
+			margin-bottom: -0.25rem;
+		}
+	}
+}
+
+/*
+|----------------------------------------------------------------------
+|		Datepicker
+|----------------------------------------------------------------------
+*/
+
+.react-datepicker {
+	display: block;
+	font-size: inherit;
+	&.datepicker-dropdown {
+		min-width: 36rem;
+		border-radius: 1rem;
+	}
+	&__month-container {
+		float: none;
+	}
+	&__day,
+	&__day-name {
+		width: 100%;
+		margin: 0;
+		padding: 0.8rem;
+	}
+	&__week,
+	&__day-names {
+		@include flex;
+	}
+	&__current-month {
+		font-size: inherit;
+	}
+	&__day--selected {
+		background: var(--prime_color);
+	}
+	&__navigation {
+		top: 1rem;
+	}
+	table {
+		tr {
+			td,
+			th {
+				color: var(--dark);
+				font-size: inherit;
+				font-weight: 500;
+			}
+			td {
+				font-weight: 400;
+				&.active,
+				&:hover {
+					background-color: rgba(var(--prime_color_rgb), 0.1) !important;
+				}
+				&.active {
+					background-color: rgba(var(--prime_color_rgb), 0.8) !important;
+					color: var(--light);
+				}
+				&.today {
+					background: var(--prime_color) !important;
+					&:hover {
+						background: inherit;
+					}
+				}
+			}
+			th {
+				font-weight: 600;
+				&.datepicker-switch {
+					border-radius: 0;
+					&:hover {
+						background-color: rgba(var(--prime_color_rgb), 0.05) !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.highcharts-credits {
+	display: none;
+}
