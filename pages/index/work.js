@@ -2,12 +2,15 @@ import React from "react"
 import style from "@/styles/scss/web.module.scss"
 import Link from "next/link"
 import Image from "next/image"
-import { PhotoBrandBlk_google, PhotoBrandCoinbase, PhotoBrandGrandHyatt, PhotoBrandJohnDeere, PhotoBrandVisa, PhotoBrandZoom, PhotoWork } from "@/components/images"
+import { PhotoBrandBlk_google, PhotoBrandCoinbase, PhotoBrandGrandHyatt, PhotoBrandJohnDeere, PhotoBrandVisa, PhotoBrandZoom, PhotoVector_02, PhotoWork } from "@/components/images"
 
 export default function Work() {
 	return (
 		<>
 			<section id={style.work}>
+				<div class={style.fig}>
+					<Image width={1000} height={1000} src={PhotoVector_02} alt="" />
+				</div>
 				<div className={style.contain}>
 					<div class={`${style.content} text-center`}>
 						<h2>It&lsquo;s more than work. It&lsquo;s a way of working together.</h2>

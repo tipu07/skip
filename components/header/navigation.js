@@ -42,7 +42,7 @@ export default function Navigation(props) {
 						</Link>
 					</li>
 					<li>
-						<Link href="/signup" className={`${style.site_btn} ${style.md}`}>
+						<Link href="/signup" className={`${style.site_btn} ${style.simple} ${style.md}`}>
 							Sign up
 						</Link>
 					</li>

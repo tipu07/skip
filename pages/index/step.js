@@ -2,12 +2,15 @@ import React from "react"
 import style from "@/styles/scss/web.module.scss"
 import Link from "next/link"
 import Image from "next/image"
-import { VectorIconCompass, VectorIconPricing, VectorIconSolutions } from "@/components/images"
+import { PhotoVector_01, VectorIconCompass, VectorIconPricing, VectorIconSolutions } from "@/components/images"
 
 export default function Step() {
 	return (
 		<>
 			<section id={style.step}>
+				<div class={style.fig}>
+					<Image width={1000} height={1000} src={PhotoVector_01} alt="" />
+				</div>
 				<div className={style.contain}>
 					<div class={style.contain_inner}>
 						<div class="row">

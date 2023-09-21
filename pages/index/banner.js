@@ -7,7 +7,7 @@ import { PhotoMainBanner, PhotoMainBannerVector, PlayIcon } from "@/components/i
 export default function Banner() {
 	return (
 		<>
-			<section id={style.banner}>
+			<section id={style.banner} style={{ backgroundImage: "url(" + PhotoMainBannerVector.src + ")" }}>
 				<div className={style.contain}>
 					<div className={style.wrapper}>
 						<div className={style.content}>
