@@ -2,7 +2,7 @@ import React from "react"
 import style from "@/styles/scss/web.module.scss"
 import Link from "next/link"
 import Image from "next/image"
-import { PlayIcon } from "@/components/images"
+import { PhotoMainBanner, PhotoMainBannerVector, PlayIcon } from "@/components/images"
 
 export default function Banner() {
 	return (
@@ -20,7 +20,7 @@ export default function Banner() {
 									</div>
 									<div className={`${style.btn_blk} ms-4`}>
 										<button type="submit" className={style.site_btn}>
-											Sign up now
+											Sign up
 										</button>
 									</div>
 								</div>
@@ -29,6 +29,9 @@ export default function Banner() {
 								Watch video
 								<Image width={100} height={100} src={PlayIcon} alt="" />
 							</button>
+						</div>
+						<div className={style.image}>
+							<Image width={1000} height={1000} src={PhotoMainBanner} alt="" />
 						</div>
 					</div>
 				</div>

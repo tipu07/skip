@@ -2,9 +2,8 @@ import React from "react"
 import Head from "next/head"
 import Header from "@/components/header/header"
 import Banner from "./index/banner"
-import Intro from "./index/intro"
-import Highlight from "./index/highlight"
-import Spotlight from "./index/spotlight"
+import Step from "./index/step"
+import Work from "./index/work"
 import Review from "./index/review"
 import Subscribe from "./index/subscribe"
 import AppStore from "./index/appStore"
@@ -21,10 +20,8 @@ export default function Index() {
 			</Head>
 			<Header />
 			<Banner />
-			{/* <Banner />
-			<Intro />
-			<Highlight />
-			<Spotlight /> */}
+			<Step />
+			<Work />
 			<Review />
 			<Subscribe />
 			<AppStore />
