@@ -14,7 +14,7 @@ export default function Index() {
 		<>
 			<Head>
 				<title>Home — SkipTheDealers</title>
-				<meta name="description" content="Bridge Axis" />
+				<meta name="description" content="Choose & Chill, As Simple As Ordering Dinner." />
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes" />
 				<link rel="icon" href="/images/favicon.png" />
 			</Head>
