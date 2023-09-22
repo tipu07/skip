@@ -1,17 +1,18 @@
 import React from "react"
 import style from "@/styles/scss/web.module.scss"
-import Link from "next/link"
 import Image from "next/image"
 import { PhotoMainBanner, PhotoMainBannerVector, PlayIcon } from "@/components/images"
 
 export default function Banner() {
 	return (
 		<>
-			<section id={style.banner}>
+			<section id={style.banner} style={{ backgroundImage: "url(" + PhotoMainBannerVector.src + ")" }}>
 				<div className={style.contain}>
 					<div className={style.wrapper}>
 						<div className={style.content}>
-							<h1>Choose & Chill, As Simple As Ordering Dinner.</h1>
+							<h1>
+								Choose & Chill, <strong>As Simple As Ordering Dinner.</strong>
+							</h1>
 							<p>Collaborate, manage projects, and reach new productivity peaks. From high rises to the home office, the way your team works is unique—accomplish it all with SkipTheDealers. </p>
 							<form action="" method="POST">
 								<div className={style.input_form_blk}>

@@ -13,7 +13,7 @@ export default function Header(props) {
 	return (
 		<>
 			<header id={style.header}>
-				<div className={style.contain}>
+				<div className={style.contain_fluid}>
 					<Logo />
 					<button type="button" className={`${style.toggle} ${navActive ? style.active : ""}`} onClick={navToggleHandle}>
 						<span></span>

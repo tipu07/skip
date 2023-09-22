@@ -127,7 +127,7 @@
 }
 
 .contain,
-.contain-fluid {
+.contain_fluid {
 	position: relative;
 	max-width: $container;
 	padding: 0 2rem;
@@ -147,7 +147,7 @@
 	}
 }
 
-.contain-fluid {
+.contain_fluid {
 	max-width: $container_fluid !important;
 }
 
