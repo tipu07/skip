@@ -4,6 +4,10 @@ import Header from "@/components/header/header"
 import Banner from "./index/banner"
 import Step from "./index/step"
 import Work from "./index/work"
+import Help from "./index/help"
+import Compare from "./index/compare"
+import Reward from "./index/reward"
+import Faq from "./index/faq"
 import Review from "./index/review"
 import Subscribe from "./index/subscribe"
 import AppStore from "./index/appStore"
@@ -22,6 +26,10 @@ export default function Index() {
 			<Banner />
 			<Step />
 			<Work />
+			<Help />
+			<Compare />
+			<Reward />
+			<Faq />
 			<Review />
 			<Subscribe />
 			<AppStore />
